@@ -2,6 +2,8 @@
 public class Driver {
     public static void main (String [] args) {
 
+        login();
+
         Scanner scnr = new Scanner(System.in);
 
         System.out.print("What size do you want?");
@@ -82,6 +84,37 @@ public class Driver {
                 System.out.println("Invalid slizes selection");
                 System.exit(1);
         }
+
+    }
+
+    public void login() {
+
+        Scanner scnr1 = new Scanner(System.in);
+
+        System.out.print("Name: ");
+        String name = scnr1.next();
+
+        System.out.print("Phone Number: ");
+        String phoneNumber = scnr1.next();
+
+        System.out.print("Email: ");
+        String email = scnr1.next();
+
+        System.out.print("Is your Location Enabled: ");
+        boolean locationEnabled = scnr1.nextBoolean();
+
+        System.out.print("What food do you want: ");
+        String foodOption = scnr1.next();
+
+        System.out.print("Location: ");
+        String location = scnr1.next();
+
+        System.out.print("Are you a volunteer?: ");
+        boolean isVolunteer = scnr1.nextBoolean();
+
+        User user = new User(name, phoneNumber, email, locationEnabled, foodOption, location, isVolunteer);
+
+        scnr1.close();
 
     }
 }

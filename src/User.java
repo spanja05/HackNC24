@@ -16,13 +16,13 @@ public class User {
 	private boolean isVolunteer;
 	
 	public User(String name, String phoneNumber, String email, boolean locationEnabled, String foodOption, String location, boolean isVolunteer) {
-		this.name = name;
-		this.phoneNumber = phoneNumber;
-		this.email = email;
-		this.locationEnabled = locationEnabled;
-		this.foodOption = foodOption;
-		this.location = location;
-		this.isVolunteer = isVolunteer;
+        setName(name);
+        setPhoneNumber(phoneNumber);
+        setEmail(email);
+        setLocationEnabled(locationEnabled);
+        setFoodOption(foodOption);
+        setLocation(location);
+        setVolunteer(isVolunteer);
 	}
 
 	/**
