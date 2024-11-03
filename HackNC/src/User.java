@@ -5,17 +5,12 @@ public class User {
     private String phoneNumber;
     private String email;
     private boolean locationEnabled;
-    private String location;
-    private boolean isVolunteer;
 
-    public User(String name, String phoneNumber, String email, boolean locationEnabled, String location,
-            boolean isVolunteer) {
+    public User(String name, String phoneNumber, String email, boolean locationEnabled) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.locationEnabled = locationEnabled;
-        this.location = location;
-        this.isVolunteer = isVolunteer;
     }
 
     /**
@@ -74,54 +69,9 @@ public class User {
         this.locationEnabled = locationEnabled;
     }
 
-    /**
-     * @return the location
-     */
-    public String getLocation() {
-        return location;
-    }
-
-    /**
-     * @param location the location to set
-     */
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    /**
-     * @return the isVolunteer
-     */
-    public boolean isVolunteer() {
-        return isVolunteer;
-    }
-
-    /**
-     * @param isVolunteer the isVolunteer to set
-     */
-    public void setVolunteer(boolean isVolunteer) {
-        this.isVolunteer = isVolunteer;
-    }
-
     public void requestHelp() {
         System.out.println("Calling the cops right now");
     }
 
-    /**
-     * public void dangerLevel() {
-     * 
-     * }
-     * 
-     * public void dangerSituation() {
-     * 
-     * }
-     * 
-     * public void isInCrowdedArea() {
-     * 
-     * }
-     * 
-     * public void isNearWeapons() {
-     * 
-     * }
-     */
 
 }
