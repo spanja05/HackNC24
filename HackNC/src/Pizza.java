@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Pizza extends Food {
@@ -13,12 +14,12 @@ public class Pizza extends Food {
 
     @Override
     public void deliveryResponse(Scanner scnr) {
-        //scnr = new Scanner(System.in);
+        // scnr = new Scanner(System.in);
 
         System.out.println("What toppings would you like?");
         System.out.println("The options are vegetables, chicken, pepperoni, olives");
         String flavor = scnr.next();
-        
+
         switch (flavor.toLowerCase()) {
             case "vegetables":
                 setDangerSituation("Sexual");
@@ -37,9 +38,9 @@ public class Pizza extends Food {
                 System.exit(1);
         }
 
-        System.out.println("What size do you want?");
+        System.out.println("What size do you want? (Small, Medium, Large)");
         String size = scnr.next();
-        
+
         switch (size.toLowerCase()) {
             case "small":
                 setHasWeapon(false);
@@ -77,4 +78,3 @@ public class Pizza extends Food {
     }
 
 }
-    
