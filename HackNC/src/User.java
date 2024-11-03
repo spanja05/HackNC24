@@ -73,5 +73,4 @@ public class User {
         System.out.println("Calling the cops right now");
     }
 
-
 }
