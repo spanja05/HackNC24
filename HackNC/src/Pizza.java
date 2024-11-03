@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class Pizza extends Food {
@@ -8,91 +7,74 @@ public class Pizza extends Food {
     boolean inCrowdedArea;
 
     public Pizza() {
+        super();
 
     }
 
     @Override
-    public void deliveryResponse() {
-        Scanner scnr = new Scanner(System.in);
+    public void deliveryResponse(Scanner scnr) {
+        //scnr = new Scanner(System.in);
 
-        System.out.print("What toppings would you like?");
-        System.out.print("The options are vegetables, chicken, pepperoni, olives");
+        System.out.println("What toppings would you like?");
+        System.out.println("The options are vegetables, chicken, pepperoni, olives");
         String flavor = scnr.next();
-
+        
         switch (flavor.toLowerCase()) {
             case "vegetables":
-                dangerSituation = "Sexual";
+                setDangerSituation("Sexual");
                 break;
             case "chicken":
-                dangerSituation = "Physical";
+                setDangerSituation("Physical");
                 break;
             case "pepperoni":
-                dangerSituation = "Mental";
+                setDangerSituation("Mental");
                 break;
             case "olives":
-                dangerSituation = "General Fear";
+                setDangerSituation("General Fear");
                 break;
             default:
                 System.out.println("Invalid option");
                 System.exit(1);
         }
 
-        System.out.print("What size do you want?");
+        System.out.println("What size do you want?");
         String size = scnr.next();
-
+        
         switch (size.toLowerCase()) {
             case "small":
-                hasWeapon = false;
+                setHasWeapon(false);
                 break;
             case "medium":
-                hasWeapon = true;
+                setHasWeapon(true);
                 break;
             case "large":
-                hasWeapon = true;
+                setHasWeapon(true);
                 break;
             default:
                 System.out.println("Invalid option");
                 System.exit(1);
         }
 
-        System.out.print("How many slices do you want? Options are 1-4");
+        System.out.println("How many slices do you want? Options are 1-4");
         int slices = scnr.nextInt();
+        setDangerLevel(slices);
 
-        switch (slices) {
-            case 1:
-                dangerLevel = 1;
-                break;
-            case 2:
-                dangerLevel = 2;
-                break;
-            case 3:
-                dangerLevel = 3;
-                break;
-            case 4:
-                dangerLevel = 4;
-                break;
-            default:
-                System.out.println("Invalid option");
-                System.exit(1);
-        }
-
-        System.out.print("Would you like your order to be delivered. Respond with yes or no");
+        System.out.println("Would you like your order to be delivered. Respond with yes or no");
         String deliver = scnr.next();
 
         switch (deliver) {
             case "yes":
-                inCrowdedArea = true;
+                setIsCrowded(true);
                 break;
             case "no":
-                inCrowdedArea = true;
+                setIsCrowded(false);
                 break;
             default:
                 System.out.println("Invalid option");
                 System.exit(1);
         }
 
-        scnr.close();
-
     }
 
 }
+    
