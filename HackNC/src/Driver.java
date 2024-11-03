@@ -41,7 +41,6 @@ public class Driver {
 
     public static User createAccount(Scanner scnr1) {
 
-
         System.out.print("Name: ");
         String name = scnr1.next();
 
@@ -51,14 +50,14 @@ public class Driver {
         System.out.print("Email: ");
         String email = scnr1.next();
 
-        System.out.print("Is your Location Enabled: ");
+        System.out.print("Is your Location Enabled (yes or no): ");
         String userResponse1 = scnr1.next();
         boolean locationEnabled;
         if (userResponse1.toLowerCase().equals("yes")) {
             locationEnabled = true;
         } else {
             locationEnabled = false;
-        }        
+        }
 
         User user = new User(name, phoneNumber, email, locationEnabled);
 
@@ -70,43 +69,43 @@ public class Driver {
         String foodOption = scnr2.next();
 
         if (foodOption.equalsIgnoreCase("pizza")) {
-            foodChoice = new Pizza();      
-       
+            foodChoice = new Pizza();
+
         }
 
-        
     }
 
     public static void displayMenu() {
         option = "";
 
         System.out.print("Welcome " + user.getName() + ". What would you like to do?\n"
-            + "Call - call a representative\n"
-            + "Order - order a pizza\n"
-            + "Offer - hold a button for an offer\n"
-            + "Quit - exit the program\n");
+                + "Call - call a representative\n"
+                + "Order - order a pizza\n"
+                + "Offer - hold a button for an offer\n"
+                + "Quit - exit the program\n");
 
         option = scan.next();
     }
 
     public static void generateReport() {
         System.out.println(user.getName() + " is in a " + foodChoice.getDangerSituation() + " situation.");
-            String hasWeapon = "";
-            if (foodChoice.hasWeapon) {
-                hasWeapon = "has weapons";
-            } else {
-                hasWeapon = "does not have weapons";
-            }
-            System.out.println(user.getName() + "'s attacker " + hasWeapon + " and is in a danger level of " + foodChoice.getDangerLevel());
-            String crowdedArea = "";
-            if (foodChoice.isInCrowdedArea()) {
-                crowdedArea = "crowded location.";
-            } else {
-                crowdedArea = "isolation location.";
-            }
-            System.out.println(user.getName() + " is in a " + crowdedArea);
-            if (foodChoice.getDangerLevel() > 3) {
-                System.out.println("Due to high risk situtation, calling cops now.");
-            }
+        String hasWeapon = "";
+        if (foodChoice.hasWeapon) {
+            hasWeapon = "has weapons";
+        } else {
+            hasWeapon = "does not have weapons";
+        }
+        System.out.println(user.getName() + "'s attacker " + hasWeapon + " and is in a danger level of "
+                + foodChoice.getDangerLevel());
+        String crowdedArea = "";
+        if (foodChoice.isInCrowdedArea()) {
+            crowdedArea = "crowded location.";
+        } else {
+            crowdedArea = "isolation location.";
+        }
+        System.out.println(user.getName() + " is in a " + crowdedArea);
+        if (foodChoice.getDangerLevel() > 3) {
+            System.out.println("Due to high risk situtation, calling cops now.");
+        }
     }
 }
