@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public abstract class Food {
@@ -68,7 +69,7 @@ public abstract class Food {
             try {
                 while (!Thread.currentThread().isInterrupted()) {
                     System.out.println("Holding Button. Enter \"safe\" if you feel safe\n" + //
-                                                "");
+                            "");
                     Thread.sleep(2000); // wait for 1 second
                 }
             } catch (InterruptedException e) {
@@ -89,15 +90,12 @@ public abstract class Food {
                 break;
             }
         }
-
         System.out.println("Your video has been uploaded to the cloud.");
-        System.out.println("Enter your PIN to validate your safety. Faliure to do so within a minute will result in calling the cops");
+        System.out.println(
+                "Enter your PIN to validate your safety. Failure to do so within a minute will result in calling the cops");
         String pin = scan.next();
         if (pin.compareTo("1234") == 0) {
             System.out.println("PIN entered successfully. You will now return to the main page.");
         }
-
     }
-    
-
 }
